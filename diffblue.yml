@@ -1,0 +1,652 @@
+# Tested on Deeptest release 1.10.0
+cbmcArguments:
+  cover-function-only: false
+  depth: false
+  do-not-test-methods-with-access: [ private ]
+  java-generate-no-comments: true
+  no-trivial-tests: true
+phases:
+-
+  timeout: 300
+  cbmcArguments:
+    java-assume-inputs-non-null: true
+    max-nondet-array-length: 10
+    string-non-empty: true
+    unwind: 1
+-
+  timeout: 300
+  cbmcArguments:
+    max-nondet-array-length: 20
+    unwind: 2
+-
+  timeout: 300
+  cbmcArguments:
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 3
+units:
+  - target:
+    - dir: analytics/spark/target/classes
+      file: org/locationtech/geowave/analytic/spark/GeoWaveIndexedRDD.class
+      sourceDir: analytics/spark/src/main/java
+      sourceFile: org/locationtech/geowave/analytic/spark/GeoWaveIndexedRDD.java
+    # Child of GeoWaveIndexedRDD.class
+    - dir: core/geotime/target/classes
+      file: org/locationtech/geowave/core/geotime/util/GeometryUtils.class
+      sourceDir: core/geotime/src/main/java
+      sourceFile: org/locationtech/geowave/core/geotime/util/GeometryUtils.java
+    # Child of GeoWaveIndexedRDD.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/ByteArray.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/ByteArray.java
+    # Child of GeoWaveIndexedRDD.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/InsertionIds.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/InsertionIds.java
+    # Child of GeoWaveIndexedRDD.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/NumericIndexStrategy.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/NumericIndexStrategy.java
+    # Child of GeoWaveIndexedRDD.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/sfc/data/MultiDimensionalNumericData.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/sfc/data/MultiDimensionalNumericData.java
+    # Child of GeoWaveIndexedRDD.class
+    - dir: core/mapreduce/target/classes
+      file: org/locationtech/geowave/mapreduce/input/GeoWaveInputKey.class
+      sourceDir: core/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/mapreduce/input/GeoWaveInputKey.java
+  - target:
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/operations/config/security/NewTokenCommand.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/operations/config/security/NewTokenCommand.java
+    # Child of NewTokenCommand.class
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/annotations/GeowaveOperation.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/annotations/GeowaveOperation.java
+    # Child of NewTokenCommand.class
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/api/Command.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/api/Command.java
+    # Child of NewTokenCommand.class
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/api/DefaultOperation.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/api/DefaultOperation.java
+    # Child of NewTokenCommand.class
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/api/OperationParams.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/api/OperationParams.java
+    # Child of NewTokenCommand.class
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/operations/config/ConfigSection.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/operations/config/ConfigSection.java
+    # Child of NewTokenCommand.class
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/operations/config/options/ConfigOptions.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/operations/config/options/ConfigOptions.java
+    # Child of NewTokenCommand.class
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/operations/config/security/crypto/BaseEncryption.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/operations/config/security/crypto/BaseEncryption.java
+    # Child of NewTokenCommand.class
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/operations/config/security/utils/SecurityUtils.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/operations/config/security/utils/SecurityUtils.java
+  - target:
+    - dir: extensions/datastores/cassandra/target/classes
+      file: org/locationtech/geowave/datastore/cassandra/operations/CassandraOperations.class
+      sourceDir: extensions/datastores/cassandra/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/cassandra/operations/CassandraOperations.java
+    # Child of CassandraOperations.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/SinglePartitionQueryRanges.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/SinglePartitionQueryRanges.java
+    # Child of CassandraOperations.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/StringUtils.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/StringUtils.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/BaseDataStoreOptions.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/BaseDataStoreOptions.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/CloseableIterator.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/CloseableIterator.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/CloseableIteratorWrapper.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/CloseableIteratorWrapper.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/InternalAdapterStore.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/InternalAdapterStore.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/InternalDataAdapter.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/InternalDataAdapter.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/PersistentAdapterStore.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/PersistentAdapterStore.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/api/Index.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/api/Index.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/base/dataidx/DataIndexUtils.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/base/dataidx/DataIndexUtils.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/entities/GeoWaveRow.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/entities/GeoWaveRow.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/entities/GeoWaveRowIteratorTransformer.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/entities/GeoWaveRowIteratorTransformer.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/metadata/AbstractGeoWavePersistence.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/metadata/AbstractGeoWavePersistence.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/DataIndexReaderParams.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/DataIndexReaderParams.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/MetadataDeleter.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/MetadataDeleter.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/MetadataReader.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/MetadataReader.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/MetadataType.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/MetadataType.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/MetadataWriter.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/MetadataWriter.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/ReaderParams.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/ReaderParams.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/RowDeleter.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/RowDeleter.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/RowReader.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/RowReader.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/RowReaderWrapper.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/RowReaderWrapper.java
+    # Child of CassandraOperations.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/RowWriter.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/RowWriter.java
+    # Child of CassandraOperations.class
+    - dir: extensions/datastores/cassandra/target/classes
+      file: org/locationtech/geowave/datastore/cassandra/CassandraRow.class
+      sourceDir: extensions/datastores/cassandra/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/cassandra/CassandraRow.java
+    # Child of CassandraOperations.class
+    - dir: extensions/datastores/cassandra/target/classes
+      file: org/locationtech/geowave/datastore/cassandra/config/CassandraOptions.class
+      sourceDir: extensions/datastores/cassandra/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/cassandra/config/CassandraOptions.java
+    # Child of CassandraOperations.class
+    - dir: extensions/datastores/cassandra/target/classes
+      file: org/locationtech/geowave/datastore/cassandra/config/CassandraRequiredOptions.class
+      sourceDir: extensions/datastores/cassandra/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/cassandra/config/CassandraRequiredOptions.java
+    # Child of CassandraOperations.class
+    - dir: extensions/datastores/cassandra/target/classes
+      file: org/locationtech/geowave/datastore/cassandra/util/KeyspaceStatePool.class
+      sourceDir: extensions/datastores/cassandra/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/cassandra/util/KeyspaceStatePool.java
+    # Child of CassandraOperations.class
+    - dir: extensions/datastores/cassandra/target/classes
+      file: org/locationtech/geowave/datastore/cassandra/util/SessionPool.class
+      sourceDir: extensions/datastores/cassandra/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/cassandra/util/SessionPool.java
+    # Child of CassandraOperations.class
+    - dir: core/mapreduce/target/classes
+      file: org/locationtech/geowave/mapreduce/MapReduceDataStoreOperations.class
+      sourceDir: core/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/mapreduce/MapReduceDataStoreOperations.java
+    # Child of CassandraOperations.class
+    - dir: core/mapreduce/target/classes
+      file: org/locationtech/geowave/mapreduce/splits/RecordReaderParams.class
+      sourceDir: core/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/mapreduce/splits/RecordReaderParams.java
+  - target:
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/base/BaseQuery.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/base/BaseQuery.java
+    # Child of BaseQuery.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/MultiDimensionalCoordinateRangesArray.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/MultiDimensionalCoordinateRangesArray.java
+    # Child of BaseQuery.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/QueryRanges.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/QueryRanges.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/DataStoreOptions.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/DataStoreOptions.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/api/Aggregation.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/api/Aggregation.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/base/dataidx/DataIndexRetrieval.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/base/dataidx/DataIndexRetrieval.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/callback/ScanCallback.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/callback/ScanCallback.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/callback/ScanCallbackList.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/callback/ScanCallbackList.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/data/visibility/DifferingFieldVisibilityEntryCount.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/data/visibility/DifferingFieldVisibilityEntryCount.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/data/visibility/FieldVisibilityCount.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/data/visibility/FieldVisibilityCount.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/flatten/BitmaskUtils.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/flatten/BitmaskUtils.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/DataStoreOperations.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/DataStoreOperations.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/Deleter.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/Deleter.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/ReaderParamsBuilder.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/ReaderParamsBuilder.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/query/filter/QueryFilter.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/query/filter/QueryFilter.java
+  - target:
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/query/BaseQuery.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/query/BaseQuery.java
+    # Child of BaseQuery.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/VarintUtils.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/VarintUtils.java
+    # Child of BaseQuery.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/persist/Persistable.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/persist/Persistable.java
+    # Child of BaseQuery.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/persist/PersistenceUtils.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/persist/PersistenceUtils.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/query/constraints/QueryConstraints.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/query/constraints/QueryConstraints.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/query/options/CommonQueryOptions.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/query/options/CommonQueryOptions.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/query/options/DataTypeQueryOptions.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/query/options/DataTypeQueryOptions.java
+    # Child of BaseQuery.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/query/options/IndexQueryOptions.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/query/options/IndexQueryOptions.java
+  - target:
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/IngestMessageHandler.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/IngestMessageHandler.java
+    # Child of IngestMessageHandler.class
+    - dir: core/ingest/target/classes
+      file: org/locationtech/geowave/core/ingest/hdfs/mapreduce/KeyValueData.class
+      sourceDir: core/ingest/src/main/java
+      sourceFile: org/locationtech/geowave/core/ingest/hdfs/mapreduce/KeyValueData.java
+    # Child of IngestMessageHandler.class
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/image/ImageChipInfo.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/image/ImageChipInfo.java
+    # Child of IngestMessageHandler.class
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/image/ImageChipUtils.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/image/ImageChipUtils.java
+    # Child of IngestMessageHandler.class
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/parser/model/MissionFrame.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/parser/model/MissionFrame.java
+    # Child of IngestMessageHandler.class
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/parser/model/MissionSummary.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/parser/model/MissionSummary.java
+    # Child of IngestMessageHandler.class
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/parser/model/MissionSummaryMessage.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/parser/model/MissionSummaryMessage.java
+    # Child of IngestMessageHandler.class
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/parser/model/ModalityType.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/parser/model/ModalityType.java
+    # Child of IngestMessageHandler.class
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/parser/model/MotionEventPoint.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/parser/model/MotionEventPoint.java
+    # Child of IngestMessageHandler.class
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/parser/model/MotionImagery.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/parser/model/MotionImagery.java
+    # Child of IngestMessageHandler.class
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/parser/model/NATO4676Message.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/parser/model/NATO4676Message.java
+    # Child of IngestMessageHandler.class
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/parser/model/ObjectClassification.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/parser/model/ObjectClassification.java
+    # Child of IngestMessageHandler.class
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/parser/model/TrackClassification.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/parser/model/TrackClassification.java
+    # Child of IngestMessageHandler.class
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/parser/model/TrackEvent.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/parser/model/TrackEvent.java
+    # Child of IngestMessageHandler.class
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/parser/model/TrackMessage.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/parser/model/TrackMessage.java
+    # Child of IngestMessageHandler.class
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/parser/model/TrackPoint.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/parser/model/TrackPoint.java
+    # Child of IngestMessageHandler.class
+    - dir: extensions/formats/stanag4676/format/target/classes
+      file: org/locationtech/geowave/format/stanag4676/parser/model/TrackRun.class
+      sourceDir: extensions/formats/stanag4676/format/src/main/java
+      sourceFile: org/locationtech/geowave/format/stanag4676/parser/model/TrackRun.java
+  - target:
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/StoreFactoryOptions.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/StoreFactoryOptions.java
+    # Child of StoreFactoryOptions.class
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/Constants.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/Constants.java
+    # Child of StoreFactoryOptions.class
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/utils/JCommanderParameterUtils.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/utils/JCommanderParameterUtils.java
+    # Child of StoreFactoryOptions.class
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/utils/PropertiesUtils.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/utils/PropertiesUtils.java
+    # Child of StoreFactoryOptions.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/cli/remote/options/DataStorePluginOptions.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/cli/remote/options/DataStorePluginOptions.java
+  - target:
+    - dir: extensions/datastores/cassandra/target/classes
+      file: org/locationtech/geowave/datastore/cassandra/operations/CassandraMetadataReader.class
+      sourceDir: extensions/datastores/cassandra/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/cassandra/operations/CassandraMetadataReader.java
+    # Child of CassandraMetadataReader.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/entities/GeoWaveMetadata.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/entities/GeoWaveMetadata.java
+    # Child of CassandraMetadataReader.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/MetadataQuery.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/MetadataQuery.java
+    # Child of CassandraMetadataReader.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/util/StatisticsRowIterator.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/util/StatisticsRowIterator.java
+  - target:
+    - dir: extensions/datastores/accumulo/target/munged/classes
+      file: org/locationtech/geowave/datastore/accumulo/mapreduce/BackwardCompatibleTabletLocatorFactory.class
+      sourceDir: extensions/datastores/accumulo/target/munged/main
+      sourceFile: org/locationtech/geowave/datastore/accumulo/mapreduce/BackwardCompatibleTabletLocatorFactory.java
+    # Child of BackwardCompatibleTabletLocatorFactory.class
+    - dir: extensions/datastores/accumulo/target/munged/classes
+      file: org/locationtech/geowave/datastore/accumulo/operations/AccumuloOperations.class
+      sourceDir: extensions/datastores/accumulo/target/munged/main
+      sourceFile: org/locationtech/geowave/datastore/accumulo/operations/AccumuloOperations.java
+  - target:
+    - dir: extensions/datastores/dynamodb/target/classes
+      file: org/locationtech/geowave/datastore/dynamodb/operations/DynamoDBOperations.class
+      sourceDir: extensions/datastores/dynamodb/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/dynamodb/operations/DynamoDBOperations.java
+    # Child of DynamoDBOperations.class
+    - dir: extensions/datastores/dynamodb/target/classes
+      file: org/locationtech/geowave/datastore/dynamodb/DynamoDBClientPool.class
+      sourceDir: extensions/datastores/dynamodb/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/dynamodb/DynamoDBClientPool.java
+    # Child of DynamoDBOperations.class
+    - dir: extensions/datastores/dynamodb/target/classes
+      file: org/locationtech/geowave/datastore/dynamodb/DynamoDBOptions.class
+      sourceDir: extensions/datastores/dynamodb/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/dynamodb/DynamoDBOptions.java
+    # Child of DynamoDBOperations.class
+    - dir: extensions/datastores/dynamodb/target/classes
+      file: org/locationtech/geowave/datastore/dynamodb/DynamoDBRow.class
+      sourceDir: extensions/datastores/dynamodb/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/dynamodb/DynamoDBRow.java
+  - target:
+    - dir: core/ingest/target/classes
+      file: org/locationtech/geowave/core/ingest/hdfs/mapreduce/IngestFromHdfsDriver.class
+      sourceDir: core/ingest/src/main/java
+      sourceFile: org/locationtech/geowave/core/ingest/hdfs/mapreduce/IngestFromHdfsDriver.java
+    # Child of IngestFromHdfsDriver.class
+    - dir: core/ingest/target/classes
+      file: org/locationtech/geowave/core/ingest/IngestUtils.class
+      sourceDir: core/ingest/src/main/java
+      sourceFile: org/locationtech/geowave/core/ingest/IngestUtils.java
+    # Child of IngestFromHdfsDriver.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/cli/remote/options/IndexPluginOptions.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/cli/remote/options/IndexPluginOptions.java
+    # Child of IngestFromHdfsDriver.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/cli/remote/options/VisibilityOptions.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/cli/remote/options/VisibilityOptions.java
+    # Child of IngestFromHdfsDriver.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/ingest/DataAdapterProvider.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/ingest/DataAdapterProvider.java
+    # Child of IngestFromHdfsDriver.class
+    - dir: core/mapreduce/target/classes
+      file: org/locationtech/geowave/mapreduce/GeoWaveConfiguratorBase.class
+      sourceDir: core/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/mapreduce/GeoWaveConfiguratorBase.java
+  - target:
+    - dir: examples/java-api/target/classes
+      file: org/locationtech/geowave/examples/query/SpatialTemporalQueryExample.class
+      sourceDir: examples/java-api/src/main/java
+      sourceFile: org/locationtech/geowave/examples/query/SpatialTemporalQueryExample.java
+    # Child of SpatialTemporalQueryExample.class
+    - dir: extensions/adapters/vector/target/classes
+      file: org/locationtech/geowave/adapter/vector/FeatureDataAdapter.class
+      sourceDir: extensions/adapters/vector/src/main/java
+      sourceFile: org/locationtech/geowave/adapter/vector/FeatureDataAdapter.java
+    # Child of SpatialTemporalQueryExample.class
+    - dir: extensions/adapters/vector/target/classes
+      file: org/locationtech/geowave/adapter/vector/util/DateUtilities.class
+      sourceDir: extensions/adapters/vector/src/main/java
+      sourceFile: org/locationtech/geowave/adapter/vector/util/DateUtilities.java
+    # Child of SpatialTemporalQueryExample.class
+    - dir: core/geotime/target/classes
+      file: org/locationtech/geowave/core/geotime/ingest/SpatialTemporalDimensionalityTypeProvider.class
+      sourceDir: core/geotime/src/main/java
+      sourceFile: org/locationtech/geowave/core/geotime/ingest/SpatialTemporalDimensionalityTypeProvider.java
+    # Child of SpatialTemporalQueryExample.class
+    - dir: core/geotime/target/classes
+      file: org/locationtech/geowave/core/geotime/ingest/SpatialTemporalOptions.class
+      sourceDir: core/geotime/src/main/java
+      sourceFile: org/locationtech/geowave/core/geotime/ingest/SpatialTemporalOptions.java
+    # Child of SpatialTemporalQueryExample.class
+    - dir: core/geotime/target/classes
+      file: org/locationtech/geowave/core/geotime/store/query/api/VectorQueryBuilder.class
+      sourceDir: core/geotime/src/main/java
+      sourceFile: org/locationtech/geowave/core/geotime/store/query/api/VectorQueryBuilder.java
+    # Child of SpatialTemporalQueryExample.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/api/DataStore.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/api/DataStore.java
+    # Child of SpatialTemporalQueryExample.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/api/DataStoreFactory.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/api/DataStoreFactory.java
+    # Child of SpatialTemporalQueryExample.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/api/Writer.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/api/Writer.java
+    # Child of SpatialTemporalQueryExample.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/memory/MemoryRequiredOptions.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/memory/MemoryRequiredOptions.java
+  - target:
+    - dir: extensions/formats/gpx/target/classes
+      file: org/locationtech/geowave/format/gpx/GpxUtils.class
+      sourceDir: extensions/formats/gpx/src/main/java
+      sourceFile: org/locationtech/geowave/format/gpx/GpxUtils.java
+  - target:
+    - dir: extensions/cli/sentinel2/target/classes
+      file: org/locationtech/geowave/format/sentinel2/AnalyzeRunner.class
+      sourceDir: extensions/cli/sentinel2/src/main/java
+      sourceFile: org/locationtech/geowave/format/sentinel2/AnalyzeRunner.java
+  - target:
+    - dir: extensions/cli/landsat8/target/classes
+      file: org/locationtech/geowave/format/landsat8/AnalyzeRunner.class
+      sourceDir: extensions/cli/landsat8/src/main/java
+      sourceFile: org/locationtech/geowave/format/landsat8/AnalyzeRunner.java
+  - target:
+    - dir: extensions/datastores/hbase/target/classes
+      file: org/locationtech/geowave/datastore/hbase/util/CoprocessorClassLoaderTransformer.class
+      sourceDir: extensions/datastores/hbase/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/hbase/util/CoprocessorClassLoaderTransformer.java
+    # Child of CoprocessorClassLoaderTransformer.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/spi/ClassLoaderTransformerSpi.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/spi/ClassLoaderTransformerSpi.java
+  - target:
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/server/ServerOpHelper.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/server/ServerOpHelper.java
+    # Child of ServerOpHelper.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/RowMergingDataAdapter.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/RowMergingDataAdapter.java
