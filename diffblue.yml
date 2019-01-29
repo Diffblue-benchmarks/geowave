@@ -650,3 +650,518 @@ units:
       file: org/locationtech/geowave/core/store/adapter/RowMergingDataAdapter.class
       sourceDir: core/store/src/main/java
       sourceFile: org/locationtech/geowave/core/store/adapter/RowMergingDataAdapter.java
+  - target:
+    - dir: extensions/datastores/redis/target/classes
+      file: org/locationtech/geowave/datastore/redis/operations/RedisReader.class
+      sourceDir: extensions/datastores/redis/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/redis/operations/RedisReader.java
+    # Child of RedisReader.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/ByteArrayRange.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/ByteArrayRange.java
+    # Child of RedisReader.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/entities/GeoWaveRowMergingIterator.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/entities/GeoWaveRowMergingIterator.java
+    # Child of RedisReader.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/RangeReaderParams.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/RangeReaderParams.java
+    # Child of RedisReader.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/query/filter/ClientVisibilityFilter.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/query/filter/ClientVisibilityFilter.java
+    # Child of RedisReader.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/util/DataStoreUtils.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/util/DataStoreUtils.java
+    # Child of RedisReader.class
+    - dir: extensions/datastores/redis/target/classes
+      file: org/locationtech/geowave/datastore/redis/util/GeoWaveRedisPersistedRow.class
+      sourceDir: extensions/datastores/redis/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/redis/util/GeoWaveRedisPersistedRow.java
+    # Child of RedisReader.class
+    - dir: extensions/datastores/redis/target/classes
+      file: org/locationtech/geowave/datastore/redis/util/GeoWaveRedisRow.class
+      sourceDir: extensions/datastores/redis/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/redis/util/GeoWaveRedisRow.java
+    # Child of RedisReader.class
+    - dir: extensions/datastores/redis/target/classes
+      file: org/locationtech/geowave/datastore/redis/util/RedisUtils.class
+      sourceDir: extensions/datastores/redis/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/redis/util/RedisUtils.java
+    # Child of RedisReader.class
+    - dir: core/mapreduce/target/classes
+      file: org/locationtech/geowave/mapreduce/splits/GeoWaveRowRange.class
+      sourceDir: core/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/mapreduce/splits/GeoWaveRowRange.java
+  - target:
+    - dir: analytics/mapreduce/target/classes
+      file: org/locationtech/geowave/analytic/mapreduce/kde/compare/ComparisonStatsJobRunner.class
+      sourceDir: analytics/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/analytic/mapreduce/kde/compare/ComparisonStatsJobRunner.java
+    # Child of ComparisonStatsJobRunner.class
+    - dir: extensions/adapters/raster/target/classes
+      file: org/locationtech/geowave/adapter/raster/RasterUtils.class
+      sourceDir: extensions/adapters/raster/src/main/java
+      sourceFile: org/locationtech/geowave/adapter/raster/RasterUtils.java
+    # Child of ComparisonStatsJobRunner.class
+    - dir: analytics/mapreduce/target/classes
+      file: org/locationtech/geowave/analytic/mapreduce/kde/KDECommandLineOptions.class
+      sourceDir: analytics/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/analytic/mapreduce/kde/KDECommandLineOptions.java
+    # Child of ComparisonStatsJobRunner.class
+    - dir: analytics/mapreduce/target/classes
+      file: org/locationtech/geowave/analytic/mapreduce/kde/KDEJobRunner.class
+      sourceDir: analytics/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/analytic/mapreduce/kde/KDEJobRunner.java
+    # Child of ComparisonStatsJobRunner.class
+    - dir: analytics/mapreduce/target/classes
+      file: org/locationtech/geowave/analytic/mapreduce/operations/KdeCommand.class
+      sourceDir: analytics/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/analytic/mapreduce/operations/KdeCommand.java
+    # Child of ComparisonStatsJobRunner.class
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/parser/CommandLineOperationParams.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/parser/CommandLineOperationParams.java
+    # Child of ComparisonStatsJobRunner.class
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/parser/OperationParser.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/parser/OperationParser.java
+    # Child of ComparisonStatsJobRunner.class
+    - dir: core/geotime/target/classes
+      file: org/locationtech/geowave/core/geotime/ingest/SpatialDimensionalityTypeProvider.class
+      sourceDir: core/geotime/src/main/java
+      sourceFile: org/locationtech/geowave/core/geotime/ingest/SpatialDimensionalityTypeProvider.java
+    # Child of ComparisonStatsJobRunner.class
+    - dir: core/geotime/target/classes
+      file: org/locationtech/geowave/core/geotime/ingest/SpatialOptions.class
+      sourceDir: core/geotime/src/main/java
+      sourceFile: org/locationtech/geowave/core/geotime/ingest/SpatialOptions.java
+    # Child of ComparisonStatsJobRunner.class
+    - dir: core/mapreduce/target/classes
+      file: org/locationtech/geowave/mapreduce/output/GeoWaveOutputFormat.class
+      sourceDir: core/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/mapreduce/output/GeoWaveOutputFormat.java
+    # Child of ComparisonStatsJobRunner.class
+    - dir: core/mapreduce/target/classes
+      file: org/locationtech/geowave/mapreduce/output/GeoWaveOutputKey.class
+      sourceDir: core/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/mapreduce/output/GeoWaveOutputKey.java
+  - target:
+    - dir: extensions/datastores/dynamodb/target/classes
+      file: org/locationtech/geowave/datastore/dynamodb/operations/DynamoDBMetadataReader.class
+      sourceDir: extensions/datastores/dynamodb/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/dynamodb/operations/DynamoDBMetadataReader.java
+    # Child of DynamoDBMetadataReader.class
+    - dir: extensions/datastores/dynamodb/target/classes
+      file: org/locationtech/geowave/datastore/dynamodb/util/DynamoDBUtils.class
+      sourceDir: extensions/datastores/dynamodb/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/dynamodb/util/DynamoDBUtils.java
+    # Child of DynamoDBMetadataReader.class
+    - dir: extensions/datastores/dynamodb/target/classes
+      file: org/locationtech/geowave/datastore/dynamodb/util/LazyPaginatedQuery.class
+      sourceDir: extensions/datastores/dynamodb/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/dynamodb/util/LazyPaginatedQuery.java
+    # Child of DynamoDBMetadataReader.class
+    - dir: extensions/datastores/dynamodb/target/classes
+      file: org/locationtech/geowave/datastore/dynamodb/util/LazyPaginatedScan.class
+      sourceDir: extensions/datastores/dynamodb/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/dynamodb/util/LazyPaginatedScan.java
+  - target:
+    - dir: services/rest/target/classes
+      file: org/locationtech/geowave/service/rest/field/RestFieldFactory.class
+      sourceDir: services/rest/src/main/java
+      sourceFile: org/locationtech/geowave/service/rest/field/RestFieldFactory.java
+    # Child of RestFieldFactory.class
+    - dir: services/rest/target/classes
+      file: org/locationtech/geowave/service/rest/GeoWaveOperationServiceWrapper.class
+      sourceDir: services/rest/src/main/java
+      sourceFile: org/locationtech/geowave/service/rest/GeoWaveOperationServiceWrapper.java
+  - target:
+    - dir: extensions/datastores/hbase/target/classes
+      file: org/locationtech/geowave/datastore/hbase/server/MergingServerOp.class
+      sourceDir: extensions/datastores/hbase/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/hbase/server/MergingServerOp.java
+    # Child of MergingServerOp.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/ByteArrayUtils.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/ByteArrayUtils.java
+    # Child of MergingServerOp.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/Mergeable.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/Mergeable.java
+    # Child of MergingServerOp.class
+    - dir: core/mapreduce/target/classes
+      file: org/locationtech/geowave/mapreduce/URLClassloaderUtils.class
+      sourceDir: core/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/mapreduce/URLClassloaderUtils.java
+  - target:
+    - dir: extensions/datastores/accumulo/target/munged/classes
+      file: org/locationtech/geowave/datastore/accumulo/mapreduce/AccumuloSplitsProvider.class
+      sourceDir: extensions/datastores/accumulo/target/munged/main
+      sourceFile: org/locationtech/geowave/datastore/accumulo/mapreduce/AccumuloSplitsProvider.java
+    # Child of AccumuloSplitsProvider.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/IndexMetaData.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/IndexMetaData.java
+    # Child of AccumuloSplitsProvider.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/TransientAdapterStore.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/TransientAdapterStore.java
+    # Child of AccumuloSplitsProvider.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/statistics/DataStatisticsStore.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/statistics/DataStatisticsStore.java
+    # Child of AccumuloSplitsProvider.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/statistics/RowRangeHistogramStatistics.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/statistics/RowRangeHistogramStatistics.java
+    # Child of AccumuloSplitsProvider.class
+    - dir: extensions/datastores/accumulo/target/munged/classes
+      file: org/locationtech/geowave/datastore/accumulo/util/AccumuloUtils.class
+      sourceDir: extensions/datastores/accumulo/target/munged/main
+      sourceFile: org/locationtech/geowave/datastore/accumulo/util/AccumuloUtils.java
+    # Child of AccumuloSplitsProvider.class
+    - dir: core/mapreduce/target/classes
+      file: org/locationtech/geowave/mapreduce/splits/IntermediateSplitInfo.class
+      sourceDir: core/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/mapreduce/splits/IntermediateSplitInfo.java
+    # Child of AccumuloSplitsProvider.class
+    - dir: core/mapreduce/target/classes
+      file: org/locationtech/geowave/mapreduce/splits/RangeLocationPair.class
+      sourceDir: core/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/mapreduce/splits/RangeLocationPair.java
+    # Child of AccumuloSplitsProvider.class
+    - dir: core/mapreduce/target/classes
+      file: org/locationtech/geowave/mapreduce/splits/SplitInfo.class
+      sourceDir: core/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/mapreduce/splits/SplitInfo.java
+    # Child of AccumuloSplitsProvider.class
+    - dir: core/mapreduce/target/classes
+      file: org/locationtech/geowave/mapreduce/splits/SplitsProvider.class
+      sourceDir: core/mapreduce/src/main/java
+      sourceFile: org/locationtech/geowave/mapreduce/splits/SplitsProvider.java
+  - target:
+    - dir: extensions/datastores/accumulo/target/munged/classes
+      file: org/locationtech/geowave/datastore/accumulo/mapreduce/AccumuloSplitsProvider.class
+      sourceDir: extensions/datastores/accumulo/target/munged/main
+      sourceFile: org/locationtech/geowave/datastore/accumulo/mapreduce/AccumuloSplitsProvider.java
+  - target:
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/prefix/JCommanderPrefixTranslator.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/prefix/JCommanderPrefixTranslator.java
+    # Child of JCommanderPrefixTranslator.class
+    - dir: core/cli/target/classes
+      file: org/locationtech/geowave/core/cli/annotations/PrefixParameter.class
+      sourceDir: core/cli/src/main/java
+      sourceFile: org/locationtech/geowave/core/cli/annotations/PrefixParameter.java
+  - target:
+    - dir: extensions/datastores/cassandra/target/classes
+      file: org/locationtech/geowave/datastore/cassandra/operations/BatchedRangeRead.class
+      sourceDir: extensions/datastores/cassandra/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/cassandra/operations/BatchedRangeRead.java
+    # Child of BatchedRangeRead.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/util/RowConsumer.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/util/RowConsumer.java
+    # Child of BatchedRangeRead.class
+    - dir: extensions/datastores/cassandra/target/classes
+      file: org/locationtech/geowave/datastore/cassandra/util/CassandraUtils.class
+      sourceDir: extensions/datastores/cassandra/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/cassandra/util/CassandraUtils.java
+  - target:
+    - dir: extensions/datastores/redis/target/classes
+      file: org/locationtech/geowave/datastore/redis/operations/BatchedRangeRead.class
+      sourceDir: extensions/datastores/redis/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/redis/operations/BatchedRangeRead.java
+    # Child of BatchedRangeRead.class
+    - dir: extensions/datastores/redis/target/classes
+      file: org/locationtech/geowave/datastore/redis/util/RedisScoredSetWrapper.class
+      sourceDir: extensions/datastores/redis/src/main/java
+      sourceFile: org/locationtech/geowave/datastore/redis/util/RedisScoredSetWrapper.java
+  - target:
+    - dir: extensions/adapters/vector/target/classes
+      file: org/locationtech/geowave/adapter/vector/index/ChooseBestMatchIndexQueryStrategy.class
+      sourceDir: extensions/adapters/vector/src/main/java
+      sourceFile: org/locationtech/geowave/adapter/vector/index/ChooseBestMatchIndexQueryStrategy.java
+    # Child of ChooseBestMatchIndexQueryStrategy.class
+    - dir: core/geotime/target/classes
+      file: org/locationtech/geowave/core/geotime/store/query/api/VectorStatisticsQueryBuilder.class
+      sourceDir: core/geotime/src/main/java
+      sourceFile: org/locationtech/geowave/core/geotime/store/query/api/VectorStatisticsQueryBuilder.java
+    # Child of ChooseBestMatchIndexQueryStrategy.class
+    - dir: core/index/target/classes
+      file: org/locationtech/geowave/core/index/IndexUtils.class
+      sourceDir: core/index/src/main/java
+      sourceFile: org/locationtech/geowave/core/index/IndexUtils.java
+    # Child of ChooseBestMatchIndexQueryStrategy.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/statistics/InternalDataStatistics.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/statistics/InternalDataStatistics.java
+    # Child of ChooseBestMatchIndexQueryStrategy.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/statistics/StatisticsId.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/statistics/StatisticsId.java
+    # Child of ChooseBestMatchIndexQueryStrategy.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/statistics/histogram/NumericHistogram.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/statistics/histogram/NumericHistogram.java
+    # Child of ChooseBestMatchIndexQueryStrategy.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/api/StatisticsQuery.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/api/StatisticsQuery.java
+    # Child of ChooseBestMatchIndexQueryStrategy.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/query/constraints/BasicQuery.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/query/constraints/BasicQuery.java
+  - target:
+    - dir: extensions/adapters/vector/target/classes
+      file: org/locationtech/geowave/adapter/vector/index/ChooseHeuristicMatchIndexQueryStrategy.class
+      sourceDir: extensions/adapters/vector/src/main/java
+      sourceFile: org/locationtech/geowave/adapter/vector/index/ChooseHeuristicMatchIndexQueryStrategy.java
+  - target:
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/base/BaseDataStore.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/base/BaseDataStore.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/AdapterToIndexMapping.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/AdapterToIndexMapping.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/AdapterIndexMappingStore.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/AdapterIndexMappingStore.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/IndexDependentDataAdapter.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/IndexDependentDataAdapter.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/InitializeWithIndicesDataAdapter.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/InitializeWithIndicesDataAdapter.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/InternalDataAdapterWrapper.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/InternalDataAdapterWrapper.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/exceptions/MismatchedIndexToAdapterMapping.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/exceptions/MismatchedIndexToAdapterMapping.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/statistics/DuplicateEntryCount.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/statistics/DuplicateEntryCount.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/adapter/statistics/StatisticsImpl.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/adapter/statistics/StatisticsImpl.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/api/AggregationQuery.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/api/AggregationQuery.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/api/DataTypeAdapter.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/api/DataTypeAdapter.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/api/IngestOptions.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/api/IngestOptions.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/api/Query.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/api/Query.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/api/QueryBuilder.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/api/QueryBuilder.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/api/Statistics.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/api/Statistics.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/callback/DeleteCallbackList.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/callback/DeleteCallbackList.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/callback/DuplicateDeletionCallback.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/callback/DuplicateDeletionCallback.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/callback/IngestCallback.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/callback/IngestCallback.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/callback/IngestCallbackList.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/callback/IngestCallbackList.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/index/IndexMetaDataSet.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/index/IndexMetaDataSet.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/index/IndexStore.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/index/IndexStore.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/index/writer/IndependentAdapterIndexWriter.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/index/writer/IndependentAdapterIndexWriter.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/index/writer/IndexCompositeWriter.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/index/writer/IndexCompositeWriter.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/memory/MemoryPersistentAdapterStore.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/memory/MemoryPersistentAdapterStore.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/operations/DataIndexReaderParamsBuilder.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/operations/DataIndexReaderParamsBuilder.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/query/aggregate/AdapterAndIndexBasedAggregation.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/query/aggregate/AdapterAndIndexBasedAggregation.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/query/constraints/AdapterAndIndexBasedQueryConstraints.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/query/constraints/AdapterAndIndexBasedQueryConstraints.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/query/constraints/EverythingQuery.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/query/constraints/EverythingQuery.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/query/constraints/InsertionIdQuery.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/query/constraints/InsertionIdQuery.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/query/constraints/PrefixIdQuery.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/query/constraints/PrefixIdQuery.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/query/constraints/TypeConstraintQuery.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/query/constraints/TypeConstraintQuery.java
+    # Child of BaseDataStore.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/query/filter/DedupeFilter.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/query/filter/DedupeFilter.java
+  - target:
+    - dir: extensions/adapters/raster/target/classes
+      file: org/locationtech/geowave/adapter/raster/adapter/warp/WarpNearestOpImage.class
+      sourceDir: extensions/adapters/raster/src/main/java
+      sourceFile: org/locationtech/geowave/adapter/raster/adapter/warp/WarpNearestOpImage.java
+  - target:
+    - dir: extensions/cli/sentinel2/target/classes
+      file: org/locationtech/geowave/format/sentinel2/RasterIngestRunner.class
+      sourceDir: extensions/cli/sentinel2/src/main/java
+      sourceFile: org/locationtech/geowave/format/sentinel2/RasterIngestRunner.java
+    # Child of RasterIngestRunner.class
+    - dir: extensions/adapters/raster/target/classes
+      file: org/locationtech/geowave/adapter/raster/adapter/RasterDataAdapter.class
+      sourceDir: extensions/adapters/raster/src/main/java
+      sourceFile: org/locationtech/geowave/adapter/raster/adapter/RasterDataAdapter.java
+    # Child of RasterIngestRunner.class
+    - dir: extensions/adapters/raster/target/classes
+      file: org/locationtech/geowave/adapter/raster/adapter/merge/nodata/NoDataMergeStrategy.class
+      sourceDir: extensions/adapters/raster/src/main/java
+      sourceFile: org/locationtech/geowave/adapter/raster/adapter/merge/nodata/NoDataMergeStrategy.java
+    # Child of RasterIngestRunner.class
+    - dir: extensions/adapters/raster/target/classes
+      file: org/locationtech/geowave/adapter/raster/plugin/GeoWaveGTRasterFormat.class
+      sourceDir: extensions/adapters/raster/src/main/java
+      sourceFile: org/locationtech/geowave/adapter/raster/plugin/GeoWaveGTRasterFormat.java
+    # Child of RasterIngestRunner.class
+    - dir: core/geotime/target/classes
+      file: org/locationtech/geowave/core/geotime/util/ExtractGeometryFilterVisitor.class
+      sourceDir: core/geotime/src/main/java
+      sourceFile: org/locationtech/geowave/core/geotime/util/ExtractGeometryFilterVisitor.java
+    # Child of RasterIngestRunner.class
+    - dir: core/geotime/target/classes
+      file: org/locationtech/geowave/core/geotime/util/ExtractGeometryFilterVisitorResult.class
+      sourceDir: core/geotime/src/main/java
+      sourceFile: org/locationtech/geowave/core/geotime/util/ExtractGeometryFilterVisitorResult.java
+    # Child of RasterIngestRunner.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/cli/remote/options/IndexLoader.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/cli/remote/options/IndexLoader.java
+    # Child of RasterIngestRunner.class
+    - dir: core/store/target/classes
+      file: org/locationtech/geowave/core/store/cli/remote/options/StoreLoader.class
+      sourceDir: core/store/src/main/java
+      sourceFile: org/locationtech/geowave/core/store/cli/remote/options/StoreLoader.java
+  - target:
+    - dir: extensions/cli/landsat8/target/classes
+      file: org/locationtech/geowave/format/landsat8/RasterIngestRunner.class
+      sourceDir: extensions/cli/landsat8/src/main/java
+      sourceFile: org/locationtech/geowave/format/landsat8/RasterIngestRunner.java
+    # Child of RasterIngestRunner.class
+    - dir: extensions/adapters/raster/target/classes
+      file: org/locationtech/geowave/adapter/raster/plugin/gdal/GDALGeoTiffReader.class
+      sourceDir: extensions/adapters/raster/src/main/java
+      sourceFile: org/locationtech/geowave/adapter/raster/plugin/gdal/GDALGeoTiffReader.java
+  - target:
+    - dir: extensions/cli/sentinel2/target/classes
+      file: org/locationtech/geowave/format/sentinel2/RasterIngestRunner.class
+      sourceDir: extensions/cli/sentinel2/src/main/java
+      sourceFile: org/locationtech/geowave/format/sentinel2/RasterIngestRunner.java
+  - target:
+    - dir: extensions/cli/landsat8/target/classes
+      file: org/locationtech/geowave/format/landsat8/RasterIngestRunner.class
+      sourceDir: extensions/cli/landsat8/src/main/java
+      sourceFile: org/locationtech/geowave/format/landsat8/RasterIngestRunner.java
